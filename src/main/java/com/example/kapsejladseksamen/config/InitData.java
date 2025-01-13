@@ -1,19 +1,30 @@
 package com.example.kapsejladseksamen.config;
 
 import com.example.kapsejladseksamen.model.BoatType;
+import com.example.kapsejladseksamen.model.Race;
+import com.example.kapsejladseksamen.model.Result;
 import com.example.kapsejladseksamen.model.Sailboat;
+import com.example.kapsejladseksamen.repository.RaceRepository;
+import com.example.kapsejladseksamen.repository.ResultRepository;
 import com.example.kapsejladseksamen.repository.SailboatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 
 
-    @Component
+@Component
     public class InitData implements CommandLineRunner {
 
         @Autowired
         SailboatRepository sailboatRepository;
+
+        @Autowired
+        ResultRepository resultRepository;
+
+        @Autowired
+        RaceRepository raceRepository;
 
 
         @Override
@@ -43,6 +54,30 @@ import org.springframework.stereotype.Component;
             sailboat5.setBoatType(BoatType.FROM25TO40);
             sailboat5.setBoatName("Prince of Denmark");
             sailboatRepository.save(sailboat5);
+
+            Race race1 = new Race();
+            race1.setBoatType(BoatType.LONGERTHAN40);
+            race1.setDate(LocalDate.of(2024, 05, 3));
+            raceRepository.save(race1);
+
+            Race race2 = new Race();
+            race2.setBoatType(BoatType.SMALLERTHAN25);
+            race2.setDate(LocalDate.of(2024, 05, 3));
+            raceRepository.save(race2);
+
+            Race race3 = new Race();
+            race3.setBoatType(BoatType.FROM25TO40);
+            race3.setDate(LocalDate.of(2024, 05, 3));
+            raceRepository.save(race3);
+
+            Result result1 = new Result();
+            result1.setRace(race1);
+            result1.setSailboat(sailboat);
+            result1.setPoints(1);
+            result1.setPosition(1);
+            resultRepository.save(result1);
+
+
 
 
         }
