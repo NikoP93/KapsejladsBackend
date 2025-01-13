@@ -5,7 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Entity
 public class Race {
@@ -13,6 +14,7 @@ public class Race {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int raceID;
-    private Date date;
+    private LocalDate date;
+    private BoatType boatType;
 
 }

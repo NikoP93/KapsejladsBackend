@@ -25,12 +25,12 @@ public class SailboatController {
         return sailboatService.addSailboat(sailboat);
     }
 
-    @DeleteMapping("/sailboat{id}")
+    @DeleteMapping("/sailboat/{id}")
     public ResponseEntity<Sailboat> deleteSailboat(@PathVariable int id) {
         return sailboatService.deleteSailboat(id);
     }
 
-    @PutMapping("/sailboat{id}")
+    @PutMapping("/sailboat/{id}")
     public ResponseEntity<Sailboat> updateSailboat(@PathVariable int id, @RequestBody Sailboat sailboat) {
         return sailboatService.updateSailboat(sailboat,id);
     }
