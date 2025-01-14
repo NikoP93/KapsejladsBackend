@@ -10,7 +10,7 @@ public class Result {
     private int resultID;
     private int position;
     private int points;
-    private boolean finished;
+    private Status status;
 
     @ManyToOne
     @JoinColumn(name = "boatidfk", referencedColumnName = "boatID")
@@ -20,12 +20,12 @@ public class Result {
     @JoinColumn(name = "raceidfk", referencedColumnName = "raceID")
     private Race race;
 
-    public boolean isFinished() {
-        return finished;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setFinished(boolean finished) {
-        this.finished = finished;
+    public void setStatus(Status staus) {
+        this.status = staus;
     }
 
     public int getPoints() {

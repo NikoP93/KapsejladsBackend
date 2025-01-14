@@ -77,6 +77,20 @@ import java.time.LocalDate;
             result1.setPosition(1);
             resultRepository.save(result1);
 
+            Result result2 = new Result();
+            result2.setRace(race1);
+            result2.setSailboat(sailboat2);
+            result2.setPoints(2);
+            result2.setPosition(2);
+            resultRepository.save(result2);
+
+            Result result3 = new Result();
+            result3.setRace(race1);
+            result3.setSailboat(sailboat3);
+            result3.setPoints(3);
+            result3.setPosition(3);
+            resultRepository.save(result3);
+
 
 
 
