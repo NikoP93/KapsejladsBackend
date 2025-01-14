@@ -1,9 +1,6 @@
 package com.example.kapsejladseksamen.config;
 
-import com.example.kapsejladseksamen.model.BoatType;
-import com.example.kapsejladseksamen.model.Race;
-import com.example.kapsejladseksamen.model.Result;
-import com.example.kapsejladseksamen.model.Sailboat;
+import com.example.kapsejladseksamen.model.*;
 import com.example.kapsejladseksamen.repository.RaceRepository;
 import com.example.kapsejladseksamen.repository.ResultRepository;
 import com.example.kapsejladseksamen.repository.SailboatRepository;
@@ -75,6 +72,7 @@ import java.time.LocalDate;
             result1.setSailboat(sailboat);
             result1.setPoints(1);
             result1.setPosition(1);
+            result1.setStatus(Status.Completed);
             resultRepository.save(result1);
 
             Result result2 = new Result();
@@ -82,6 +80,7 @@ import java.time.LocalDate;
             result2.setSailboat(sailboat2);
             result2.setPoints(2);
             result2.setPosition(2);
+            result2.setStatus(Status.Completed);
             resultRepository.save(result2);
 
             Result result3 = new Result();
@@ -89,6 +88,7 @@ import java.time.LocalDate;
             result3.setSailboat(sailboat3);
             result3.setPoints(3);
             result3.setPosition(3);
+            result3.setStatus(Status.EarlyStart);
             resultRepository.save(result3);
 
 

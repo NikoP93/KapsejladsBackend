@@ -67,4 +67,6 @@ public class Result {
     public void setSailboat(Sailboat sailboat) {
         this.sailboat = sailboat;
     }
+
+
 }
