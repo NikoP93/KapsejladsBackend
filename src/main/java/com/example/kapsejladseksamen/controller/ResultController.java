@@ -35,4 +35,9 @@ public class ResultController {
         return resultService.updateResult(id,result);
     }
 
+    @PostMapping("/result")
+    public ResponseEntity<Result> addResult(@RequestBody Result result) {
+        return resultService.addResult(result);
+    }
+
 }

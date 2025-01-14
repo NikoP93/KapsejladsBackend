@@ -1,5 +1,6 @@
 package com.example.kapsejladseksamen.controller;
 
+import com.example.kapsejladseksamen.model.BoatType;
 import com.example.kapsejladseksamen.model.Sailboat;
 import com.example.kapsejladseksamen.service.SailboatService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,11 @@ public class SailboatController {
         return sailboatService.getAll();
     }
 
+    @GetMapping("/sailboats/{type}")
+    public List<Sailboat> getSailboat(@PathVariable BoatType type) {
+        return sailboatService.findByBoatType(type);
+    }
+
     @PostMapping("/sailboat")
     public ResponseEntity<Sailboat> addSailboat(@RequestBody Sailboat sailboat) {
         return sailboatService.addSailboat(sailboat);
@@ -34,5 +40,6 @@ public class SailboatController {
     public ResponseEntity<Sailboat> updateSailboat(@PathVariable int id, @RequestBody Sailboat sailboat) {
         return sailboatService.updateSailboat(sailboat,id);
     }
+
 
 }

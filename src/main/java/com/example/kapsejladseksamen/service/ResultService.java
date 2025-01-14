@@ -43,5 +43,11 @@ public class ResultService {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    public ResponseEntity<Result> addResult(Result result) {
+        Result savedResult = resultRepository.save(result);
+        return new ResponseEntity<>(savedResult, HttpStatus.OK);
+
+    }
+
 
 }

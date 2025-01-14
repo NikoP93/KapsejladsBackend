@@ -1,5 +1,6 @@
 package com.example.kapsejladseksamen.service;
 
+import com.example.kapsejladseksamen.model.BoatType;
 import com.example.kapsejladseksamen.model.Sailboat;
 import com.example.kapsejladseksamen.repository.SailboatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,10 @@ public class SailboatService {
 
     public List<Sailboat> getAll(){
         return sailboatRepository.findAll();
+    }
+
+    public List<Sailboat> findByBoatType(BoatType boatType){
+        return sailboatRepository.findByBoatType(boatType);
     }
 
     public ResponseEntity<Sailboat> addSailboat(Sailboat sailboat){
