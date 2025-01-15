@@ -16,4 +16,8 @@ public class RaceService {
     public List<Race> getAllRaces(){
         return raceRepository.findAll();
     }
+
+    public Race getRaceById(int id){
+        return raceRepository.findRaceByRaceID(id);
+    }
 }
